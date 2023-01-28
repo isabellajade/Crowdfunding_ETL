@@ -24,7 +24,7 @@ CREATE TABLE contacts (
 DROP TABLE IF EXISTS campaign cascade;
 
 CREATE TABLE campaign (
-    cd_id INT PRIMARY KEY NOT NULL,
+    cf_id INT PRIMARY KEY NOT NULL,
 	contact_id INT NOT NULL,
 		FOREIGN KEY (contact_id) REFERENCES contacts(contact_id),
 	company_name VARCHAR(80) NOT NULL,
@@ -40,7 +40,7 @@ CREATE TABLE campaign (
 	category_id VARCHAR(10) NOT NULL,
 		FOREIGN KEY (category_id) REFERENCES category(category_id),
 	subcategory_id VARCHAR(20) NOT NULL,
-		FOREIGN KEY (subcategory_id) REFERENCES SUBcategory(subcategory_id)
+		FOREIGN KEY (subcategory_id) REFERENCES subcategory(subcategory_id)
 );
 
 
