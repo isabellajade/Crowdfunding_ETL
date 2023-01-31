@@ -11,29 +11,30 @@ The original data sources extracted were:
 
 ## Transform
 1. Transforming category and subcategory:
-    - Split necessary columns.
-    - Create unique identifiers for category and subcategory columns.
-    - Create DataFrames and export to CSVs.
+    - Split necessary columns
+    - Created unique identifiers for category and subcategory columns
+    - Created DataFrames and export to CSVs
 
 ![category](Images/category_df.png) ![subcategory](Images/subcat_df.png)
 
 2. Transforming the Campaign DataFrame:
-    - Renamed necessary columns.
-    - Data types were changed.
-    - Merge DataFrame with the category and subcategory DataFrames.
+    - Renamed necessary columns
+    - Changed necessary data types
+    - Merge DataFrame with the category and subcategory DataFrames
     - Unwanted columns were dropped and then exported into CSV files
 
 ![campaign](Images/campaign_df.png)
 
 3. Transforming the Contacts DataFrame:
     - Used regular expression to extract necessary data into new columns
-    - Change data types.
-    - Reorder columns and export into a CSV file
+    - Change data types
+    - Reordered columns and exported into a CSV file
 
 ![contacts](Images/contacts_df.png)
 
 ## Load
-To create the final database we sketched an ERD using QuickDBD. We then created a [table schema](crowdfunding_db_schema.sql) for each CSV file to load into our crowdfunding_db database in Postgres. 
+To create the final database we sketched an ERD using QuickDBD. We then created a [table schema](crowdfunding_db_schema.sql) for each CSV file to load into our crowdfunding_db database in Postgres, making sure that the tables were in the correct order to be able to handle the foreign keys.
+
 ![image of ERD](Images/ERD.png)
 
 * Tables:
